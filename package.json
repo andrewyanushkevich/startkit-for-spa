@@ -3,14 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.22.0",
+    "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-redux": "^7.1.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-router-prop-types": "^1.0.4",
+    "react-scripts": "3.1.1",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage all",
+    "lint": "eslint src -c .eslintrc --ext js,jsx --fix",
+    "format": "prettier --write \"src/**/*.{js,jsx,css,scss}\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -27,5 +38,29 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.18.2",
+    "prettier-eslint-cli": "^5.0.0",
+    "webpack-cli": "^3.3.8",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "pre-commit": [
+    "lint",
+    "format"
+  ]
 }
