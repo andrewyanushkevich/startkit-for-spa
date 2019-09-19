@@ -1,3 +1,4 @@
+/* eslint-disable react/state-in-constructor */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import { Icon } from 'antd';
@@ -91,12 +92,12 @@ const columns = [
     key: 'availableAdmissions',
     render: (row, record) =>
       record.availableAdmissions === 0 ? (
-        <NumberCell
+        <TextCell
           style={{ color: 'red' }}
           transparent={record.availableAdmissions === 0}
         >
           Full
-        </NumberCell>
+        </TextCell>
       ) : (
         <NumberCell transparent={record.availableAdmissions === 0}>
           {row}
@@ -251,6 +252,32 @@ const dataSource = [
 ];
 
 class TrainingTable extends Component {
+  state = {
+    selectedRows: [],
+  };
+
+  onClickRow = record => ({
+    onClick: () => {
+      const { selectedRows } = this.state;
+      const index = selectedRows.findIndex(elem => elem === record.key);
+      if (index === -1) {
+        this.setState({
+          selectedRows: [...selectedRows, record.key],
+        });
+      } else {
+        selectedRows.splice(index, 1);
+        this.setState({
+          selectedRows,
+        });
+      }
+    },
+  });
+
+  setRowClassName = record => {
+    const { selectedRows } = this.state;
+    return selectedRows.includes(record.key) ? 'clickRowStyle' : '';
+  };
+
   render() {
     const newData = dataSource.filter(elem => elem.online && elem.registered);
     return (
@@ -259,10 +286,8 @@ class TrainingTable extends Component {
         bordered
         columns={columns}
         dataSource={newData}
-        onCell={() => ({
-          onClick: () => {},
-          onDoubleClick: () => {},
-        })}
+        onRow={this.onClickRow}
+        rowClassName={this.setRowClassName}
       />
     );
   }

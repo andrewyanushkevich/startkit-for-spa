@@ -6,6 +6,13 @@ export const StyledTable = styled(Table)`
   .ant-table-bordered .ant-table-tbody > tr > td {
     padding: 5px;
   }
+
+  .clickRowStyle {
+    background-color: #6495ed;
+  }
+  .ant-table-tbody > .clickRowStyle:hover > td {
+    background-color: #6495ed !important;
+  }
 `;
 
 export const HeaderCell = styled.div`

@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import 'antd/dist/antd.css';
-import TrainingTable from './blocks/TrainingTable';
+import Home from './pages/page1/index';
 
 class App extends Component {
   render() {
-    return <TrainingTable />;
+    return <Home />;
   }
 }
 
