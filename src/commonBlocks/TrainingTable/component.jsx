@@ -92,12 +92,12 @@ const columns = [
     key: 'availableAdmissions',
     render: (row, record) =>
       record.availableAdmissions === 0 ? (
-        <TextCell
+        <NumberCell
           style={{ color: 'red' }}
           transparent={record.availableAdmissions === 0}
         >
           Full
-        </TextCell>
+        </NumberCell>
       ) : (
         <NumberCell transparent={record.availableAdmissions === 0}>
           {row}
