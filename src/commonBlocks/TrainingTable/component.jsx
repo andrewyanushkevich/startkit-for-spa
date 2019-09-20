@@ -14,7 +14,7 @@ import {
 
 const columns = [
   {
-    title: <HeaderCell>online</HeaderCell>,
+    title: <HeaderCell className="headerCell">online</HeaderCell>,
     dataIndex: 'online',
     key: 'online',
     render: value =>

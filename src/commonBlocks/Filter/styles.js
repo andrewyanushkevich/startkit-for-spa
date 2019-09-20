@@ -2,21 +2,24 @@ import styled from 'styled-components';
 import { Checkbox, Collapse } from 'antd';
 
 export const FilterWrapper = styled.div`
-  flex-direction: row;
-  flex-basis: 300px;
-  margin: 0px 50px;
+  flex-direction: column;
+  flex-basis: 250px;
+  margin: 30px 50px;
+  display: flex;
+  & > button {
+    margin: 0px 100px 20px;
+  }
 `;
 
 export const StyledCollapse = styled(Collapse)`
   background-color: LightSkyBlue;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Sites = styled(Checkbox.Group)`
   display: flex;
   flex-direction: column;
-  & > label {
-    font-size: 14px;
-  }
 `;
 
 export const Cities = styled(Checkbox.Group)`

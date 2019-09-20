@@ -10,9 +10,13 @@ export const StyledTable = styled(Table)`
   .clickRowStyle {
     background-color: #6495ed;
   }
+  .headerCell {
+    border: none;
+  }
   .ant-table-tbody > .clickRowStyle:hover > td {
     background-color: #6495ed !important;
   }
+  margin: 30px 50px;
 `;
 
 export const HeaderCell = styled.div`

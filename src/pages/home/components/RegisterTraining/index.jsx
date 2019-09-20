@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'antd';
+import { FormattedHTMLMessage } from 'react-intl';
+
 import TrainingTable from '../../../../commonBlocks/TrainingTable';
 import Filter from '../../../../commonBlocks/Filter';
 import ViewDetail from '../ViewDetail';
@@ -33,9 +35,17 @@ class RegisterTraining extends PureComponent {
         </div>
         <ButtonsWrapper>
           <Button onClick={this.handleShowDetail} data-id="View Detail">
-            View Detail
+            <FormattedHTMLMessage
+              id="viewdetail"
+              values={{ what: 'react-intl' }}
+            />
           </Button>
-          <Button>Register employee(s)</Button>
+          <Button>
+            <FormattedHTMLMessage
+              id="register_employee"
+              values={{ what: 'react-intl' }}
+            />
+          </Button>
           <Button>Register</Button>
           <Button>Close</Button>
         </ButtonsWrapper>
