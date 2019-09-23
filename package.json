@@ -61,9 +61,5 @@
     "prettier-eslint-cli": "^5.0.0",
     "webpack-cli": "^3.3.9",
     "webpack-node-externals": "^1.7.2"
-  },
-  "pre-commit": [
-    "lint",
-    "format"
-  ]
+  }
 }
